@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-data_dir= 'C:/Users/user/Desktop/class/maching learning/project/group/Don-t_Overfit_PolyU/dataset'
+data_dir= "/home/jiading/Desktop/Don't overfit/Don-t_Overfit-PolyU/data"
 
 features=['0','9','15','16','17','24','33','39','43','45','63','65','73','80','89','90','91','98','101',
  '105','117','133','134','143','150','156','164','176','183','189','194','199','209','214','215',
@@ -92,7 +92,7 @@ prediction = lasso.predict(test)
 prediction = pd.DataFrame(prediction)
 prediction.index += 250
 prediction.columns = ['target']
-prediction.to_csv('C:/Users/user/Desktop/class/maching learning/project/group/Don-t_Overfit_PolyU/result/Lasso(RobustScaler)(probing).csv', index_label='id', index=True)
+prediction.to_csv("/home/jiading/Desktop/Don't overfit/Don-t_Overfit-PolyU/result/verified_JiaDing/Lasso(RobustScaler)(probing).csv", index_label='id', index=True)
 
 
 #RFECV                                                                           
