@@ -15,4 +15,11 @@ def loadData():
     x_train,y_train=read.readCSVMatrixWithSelectionAndBeginningAndDividedAsNumber(filenameTrain,prob_int,1,1)
     x_test=read.readCSVMatrixWithSelectionAndBeginningAsNumber(filenameTest,prob_int_test,1)
     return x_train,y_train,x_test
+def loadDataWithoutProbing():
+    data_dir= "/home/jiading/Desktop/Don't overfit/Don-t_Overfit-PolyU/data"
+    filenameTrain=os.path.join(data_dir,'train.csv')
+    filenameTest=os.path.join(data_dir,'test.csv')
+    x_train,y_train=read.readCSVMatrixAndBeginningBothAndDividedAsNumber(filenameTrain,1,2,1)
+    x_test=read.readCSVMatrixAndBeginningBothAsNumber(filenameTest,1,1)
+    return x_train,y_train,x_test
 

@@ -92,3 +92,40 @@ def readCSVMatrixWithSelectionAndBeginningAsNumber(fileName,selectedRows,beginni
         index+=1
     fin.close()
     return data
+def readCSVMatrixAndBeginningBothAsNumber(fileName,beginningCol,beginningRow):
+    fin=open(fileName)
+    data=[]
+    index=0
+    lines=fin.readlines()
+    for line in lines:
+        if(index<beginningCol):
+            index+=1
+            continue
+        unselected = line.split(",")[beginningRow:]
+        floatUnselected=[]
+        for i in unselected:
+            floatUnselected.append(float(i))
+        data.append(floatUnselected)
+        index+=1
+    fin.close()
+    return data
+def readCSVMatrixAndBeginningBothAndDividedAsNumber(fileName,beginningCol,beginningRow,labelRow):
+    fin=open(fileName)
+    data=[]
+    label=[]
+    index=0
+    lines=fin.readlines()
+    for line in lines:
+        if(index<beginningCol):
+            index+=1
+            continue
+        split = line.split(",")
+        unselected=split[beginningRow:]
+        floatUnselected=[]
+        for i in unselected:
+            floatUnselected.append(float(i))
+        data.append(floatUnselected)
+        label.append(int(split[labelRow]))
+        index+=1
+    fin.close()
+    return data,label
